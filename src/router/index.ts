@@ -29,12 +29,17 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-    if (!localStorage.getItem('jwt-token') && to.name != 'login')
-      return next({name: 'login'})
-    
-    if (from.name == 'login') return next(false);
+  const isAuthenticated = !!localStorage.getItem('jwt-token');
 
-    next();
+  if (!isAuthenticated && to.name !== 'login') {
+    return next({ name: 'login' });
+  }
+
+  if (isAuthenticated && to.name === 'login') {
+    return next({ name: 'agenda' });
+  }
+
+  next();
 })
 
 export default router

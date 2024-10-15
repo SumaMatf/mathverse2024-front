@@ -83,7 +83,7 @@ const login = () => {
     .then( (response) => {
       localStorage.setItem('jwt-token', response.data.token);
       localStorage.setItem('user', JSON.stringify(response.data.user));
-      router.push({name: 'agenda'})
+      router.replace({name: 'agenda'})
     })
     .catch( () => {
       alert("Invalid")
