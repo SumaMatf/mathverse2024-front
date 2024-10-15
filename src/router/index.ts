@@ -3,19 +3,19 @@ import { RouteRecordRaw } from 'vue-router';
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/agenda',
+    path: '/',
     component: () => import ('../views/Agenda.vue'),
-    name: 'agenda'
-  },
-  {
-    path: '/news',
-    component: () => import ('../views/News.vue'),
-    name: 'news'
+    name: 'agenda',
   },
   {
     path: '/login',
     component: () => import('../views/Login.vue'),
     name: 'login'
+  },
+  {
+    path: '/news',
+    component: () => import ('../views/News.vue'),
+    name: 'news'
   }
   /*{
     path: '/folder/:id',

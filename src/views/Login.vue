@@ -75,8 +75,6 @@ const password = ref('');
 
 const login = () => {
   if (!email.value || !password.value )  {
-    console.log(email)
-    console.log(password)
     alert('Molimo vas unesite email i password');
     return
   }
