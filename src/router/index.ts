@@ -1,19 +1,22 @@
-import { createRouter, createWebHistory } from '@ionic/vue-router';
+import { createRouter, createWebHashHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '',
-    redirect: '/folder/Agenda'
+    path: '/agenda',
+    component: () => import ('../views/Agenda.vue'),
+    name: 'agenda'
   },
   {
-    path: '/folder/Agenda',
-    component: () => import ('../views/Agenda.vue')
+    path: '/news',
+    component: () => import ('../views/News.vue'),
+    name: 'news'
   },
   {
-    path: '/folder/News',
-    component: () => import ('../views/News.vue')
-  },
+    path: '/login',
+    component: () => import('../views/Login.vue'),
+    name: 'login'
+  }
   /*{
     path: '/folder/:id',
     component: () => import ('../views/FolderPage.vue')
@@ -21,8 +24,17 @@ const routes: Array<RouteRecordRaw> = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes
+})
+
+router.beforeEach((to, from, next) => {
+    if (!localStorage.getItem('jwt-token') && to.name != 'login')
+      return next({name: 'login'})
+    
+    if (from.name == 'login') return next(false);
+
+    next();
 })
 
 export default router
