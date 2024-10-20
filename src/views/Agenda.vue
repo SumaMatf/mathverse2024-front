@@ -15,17 +15,18 @@
             <ion-title size="large">{{ $route.params.id }}</ion-title>
           </ion-toolbar>
         </ion-header>
-  
-        
+        <tabela style="text-align: center;"></tabela>        
       </ion-content>
     </ion-page>
   </template>
   
   <script setup lang="ts">
-  import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+  import { IonRow, IonCol, IonGrid, IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+  import Tabela from '@/components/Agenda_Table.vue'; 
   </script>
   
   <style scoped>
+
   #container {
     text-align: center;
     position: absolute;
