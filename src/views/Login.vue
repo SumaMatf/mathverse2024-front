@@ -1,31 +1,35 @@
 <template>
-  <ion-app>
+  <ion-page>
     <ion-content>
-      <div class="loginBox" style="text-align: center;">
+      <ion-card class="ion-text-center" style="text-align: center; width: 400px; padding: 30px;">
         <ion-label class="loginLabel">Ulogujte se</ion-label>
         <ion-list>
           <ion-item>
             <ion-label fixed>Korisničko ime</ion-label>
-            <br>
+          </ion-item>
+          <ion-item>
             <ion-input v-model="email" type="text"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label fixed>Lozinka</ion-label>
-            <br>
+          </ion-item>
+          <ion-item>
             <ion-input v-model="password" type="password"></ion-input>
           </ion-item>
         </ion-list>
         
         <ion-button @click="login">Ulogujte se</ion-button>
-      </div>
+      </ion-card>
     </ion-content>
-  </ion-app>
+  </ion-page>
 </template>
 
 <script setup lang="ts">
 import {
     IonApp,
+    IonPage,
     IonContent,
+    IonCard,
     IonIcon,
     IonItem,
     IonLabel,
@@ -81,9 +85,10 @@ const login = () => {
 
   axios.post('/login', { email: email.value, password: password.value })
     .then( (response) => {
+      axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('jwt-token');
       localStorage.setItem('jwt-token', response.data.token);
       localStorage.setItem('user', JSON.stringify(response.data.user));
-      router.replace({name: 'agenda'})
+      router.replace({name: 'menu'})
     })
     .catch( () => {
       alert("Invalid")

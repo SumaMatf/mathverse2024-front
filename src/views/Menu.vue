@@ -88,7 +88,13 @@
     },
     {
       title: 'QnA',
-      url: '/folder/Outbox',
+      url: '/menu/qna',
+      iosIcon: helpOutline,
+      mdIcon: helpSharp,
+    },
+    {
+      title: 'Odgovori',
+      url: '/menu/answers',
       iosIcon: helpOutline,
       mdIcon: helpSharp,
     },
@@ -98,14 +104,8 @@
       iosIcon: qrCodeOutline,
     },
     {
-      title: 'Mapa',
-      url: '/folder/Archived',
-      iosIcon: locateOutline,
-      mdIcon: locate,
-    },
-    {
       title: 'Kontakt',
-      url: '/folder/Trash',
+      url: '/menu/contact',
       iosIcon: callOutline,
       mdIcon: callSharp,
     },

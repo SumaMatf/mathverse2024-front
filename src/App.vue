@@ -3,9 +3,9 @@
 </template>
   
 <script setup lang="ts">
-  const path = window.location.pathname.split('folder/')[1];
+  /*const path = window.location.pathname.split('lk/')[1];
   if (path !== undefined) {
     selectedIndex.value = appPages.findIndex((page) => page.title.toLowerCase() === path.toLowerCase());
-  }
+  }*/
 </script>
   

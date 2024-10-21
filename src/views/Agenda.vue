@@ -1,3 +1,9 @@
+ 
+  <script setup lang="ts">
+  import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+  import AgendaTable from '../components/AgendaTable.vue';
+  </script>
+
 <template>
     <ion-page>
       <ion-header :translucent="true">
@@ -9,21 +15,21 @@
         </ion-toolbar>
       </ion-header>
   
-      <ion-content :fullscreen="true">
+      <ion-content>
         <ion-header collapse="condense">
           <ion-toolbar>
             <ion-title size="large">{{ $route.params.id }}</ion-title>
           </ion-toolbar>
         </ion-header>
   
-        
+        <ion-content>
+          <AgendaTable></AgendaTable>
+        </ion-content>
+
       </ion-content>
     </ion-page>
   </template>
-  
-  <script setup lang="ts">
-  import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-  </script>
+ 
   
   <style scoped>
   #container {

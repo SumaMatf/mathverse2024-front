@@ -1,7 +1,7 @@
 <template>
     <ion-card>
-        <h2>QnA</h2>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit cumque dolore consectetur sed dolores dolorum quas quae aliquid, illo doloribus non, dolorem quam eveniet quasi nihil odio ad officiis facilis!
+        <h2>Pitanje</h2>
+        <h4>Ime Delegata</h4>
     </ion-card>
 </template>
 
@@ -25,6 +25,7 @@ ion-card {
     background-color: rgba(0, 0, 0, 0.1);
     border: solid 1px rgba(0, 0, 0, 0.5);
 }
+
 h2 {
     color: #ec9924;
 }

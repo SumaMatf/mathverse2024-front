@@ -4,18 +4,44 @@ import { RouteRecordRaw } from 'vue-router';
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    component: () => import ('../views/Agenda.vue'),
-    name: 'agenda',
+    redirect: '/login'
+  },
+  {
+    path: '/menu',
+    component: () => import ('../views/Menu.vue'),
+    name: 'menu',
+    children: [
+      {
+        path: 'agenda',
+        component: () => import ('../views/Agenda.vue'),
+        name: 'agenda'
+      },       
+      {
+        path: 'news',
+        component: () => import ('../views/News.vue'),
+        name: 'news'
+      },       
+      {
+        path: 'qna',
+        component: () => import ('../views/QnA.vue'),
+        name: 'qna'
+      },
+      {
+        path: 'answers',
+        component: () => import ('../views/Answers.vue'),
+        name: 'answers'
+      },
+      {
+        path: 'contact',
+        component: () => import ('../views/Contact.vue'),
+        name: 'contact'
+      }
+    ]
   },
   {
     path: '/login',
     component: () => import('../views/Login.vue'),
     name: 'login'
-  },
-  {
-    path: '/news',
-    component: () => import ('../views/News.vue'),
-    name: 'news'
   }
   /*{
     path: '/folder/:id',
@@ -36,7 +62,7 @@ router.beforeEach((to, from, next) => {
   }
 
   if (isAuthenticated && to.name === 'login') {
-    return next({ name: 'agenda' });
+    return next({ name: 'menu' });
   }
 
   next();

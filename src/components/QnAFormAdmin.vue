@@ -1,11 +1,11 @@
 <template>
     <ion-card>
-        <ion-list>
+        <ion-list lines="none">
             <ion-item>
                 <ion-label>Naslov</ion-label>
             </ion-item>
             <ion-item>
-                <ion-input v-model="title" fill="outline" type="text"></ion-input>
+                <ion-label> {{ currentQuestion }} </ion-label>
             </ion-item>
             <br />
             <ion-item>
@@ -58,6 +58,7 @@
         })
     }
 
+    const currentQuestion = ref('');
     const title = ref('');
     const content = ref('');
 </script>

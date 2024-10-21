@@ -63,5 +63,8 @@
 </script>
 
 <style scoped>
+    ion-card {
 
+    border: solid 1px rgba(0, 0, 0, 0.5);
+    }
 </style>
