@@ -1,7 +1,7 @@
 <template>
   <ion-page>
     <ion-content>
-      <ion-card class="ion-text-center" style="text-align: center; width: 400px; padding: 30px;">
+      <ion-card class="ion-text-center" style="margin:auto; text-align: center; width: 400px; padding: 30px;">
         <ion-label class="loginLabel">Ulogujte se</ion-label>
         <ion-list>
           <ion-item>
@@ -18,85 +18,49 @@
           </ion-item>
         </ion-list>
         
-        <ion-button @click="login">Ulogujte se</ion-button>
+        <ion-button @click="loginHandle">Ulogujte se</ion-button>
       </ion-card>
     </ion-content>
   </ion-page>
 </template>
-
-<script setup lang="ts">
+<script>
 import {
-    IonApp,
+  IonPage,
+  IonContent,
+  IonCard,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonInput,
+  IonButton
+} from '@ionic/vue';
+import { mapActions } from 'vuex';
+
+export default {
+  data() {
+    return {
+      email: '',
+      password: ''
+    };
+  },
+  components: {
     IonPage,
     IonContent,
     IonCard,
-    IonIcon,
     IonItem,
     IonLabel,
     IonList,
-    IonListHeader,
-    IonMenu,
-    IonMenuToggle,
-    IonNote,
-    IonRouterOutlet,
-    IonSplitPane,
     IonInput,
     IonButton
-  } from '@ionic/vue';
-import {
-    archiveOutline,
-    archiveSharp,
-    bookmarkOutline,
-    bookmarkSharp,
-    callOutline,
-    callSharp,
-    heartOutline,
-    heartSharp,
-    helpOutline,
-    helpSharp,
-    listOutline,
-    listSharp,
-    locate,
-    locateOutline,
-    mailOutline,
-    mailSharp,
-    paperPlaneOutline,
-    paperPlaneSharp,
-    qrCodeOutline,
-    timeOutline,
-    timeSharp,
-    trashOutline,
-    trashSharp,
-    warningOutline,
-    warningSharp,
-  } from 'ionicons/icons';
-import { ref } from 'vue';
-import axios from 'axios';
-import router from '../router/index';
-
-const email = ref('');
-const password = ref('');
-
-const login = () => {
-  if (!email.value || !password.value )  {
-    alert('Molimo vas unesite email i password');
-    return
+  },
+  methods: {
+    ...mapActions('auth', ['login']),
+    loginHandle() {
+      this.login({ email: this.email, password: this.password });
+    }
   }
-
-  axios.post('/login', { email: email.value, password: password.value })
-    .then( (response) => {
-      axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('jwt-token');
-      localStorage.setItem('jwt-token', response.data.token);
-      localStorage.setItem('user', JSON.stringify(response.data.user));
-      router.replace({name: 'menu'})
-    })
-    .catch( () => {
-      alert("Invalid")
-    })
-}
-
+};
 </script>
-
 <style scoped>
   .loginBox {
     width: 400px;

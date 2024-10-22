@@ -1,44 +1,27 @@
 <template>
     <ion-card>
-        <h2><b>{{ title }}</b></h2>
-        <h4><b>{{ date }}</b></h4>
-        {{ content }}
+        <h2><b>{{ article.title }}</b></h2>
+        <h4><b>{{ article.created_at }}</b></h4>
+        {{ article.content }}
     </ion-card>
         
 </template>
 
 
 <script>
-    import { defineComponent } from 'vue';
+import { IonCard } from '@ionic/vue';
 
-    export default defineComponent({
-    // Define props
+export default{
     props: {
-        title: {
-            type: String,
-            required: true,
-        },
-        date: {
-            type: Date,
-            required: true,
-        },
-        content: {
-            type: String,
+        article: {
+            type: Object,
             required: true,
         }
     },
-    // Composition API - setup function
-    setup(props) {
-        // You can access props here
-        const date = new Date(props.date).toLocaleDateString('pt-BR',{ year: 'numeric', month: '2-digit', day: '2-digit'}).split( '/' ).reverse( ).join( '-' );
-        const time = new Date(props.date).toLocaleTimeString('pt-BR',{ hour: '2-digit', minute: '2-digit' });
-        return {
-        title: props.title,
-        date: date + " " + time,
-        content: props.content,
-        };
-    },
-    });
+    components: {
+        IonCard
+    }
+}
 </script>
 
 <style scoped>

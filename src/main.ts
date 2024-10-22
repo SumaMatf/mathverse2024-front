@@ -21,7 +21,8 @@ import '@ionic/vue/css/flex-utils.css';
 import '@ionic/vue/css/display.css';
 
 import axios from '@/axios';
-import VueAxios from 'vue-axios'
+import VueAxios from 'vue-axios';
+import store from '@/store'
 /**
  * Ionic Dark Mode
  * -----------------------------------------------------
@@ -39,7 +40,8 @@ import './theme/variables.css';
 const app = createApp(App)
   .use(VueAxios, axios)
   .use(IonicVue)
-  .use(router);
+  .use(router)
+  .use(store);
 
 router.isReady().then(() => {
   app.mount('#app');

@@ -22,15 +22,8 @@
           </ion-toolbar>
         </ion-header>
 
-        <NewsForm></NewsForm>
-
-        <!-- <div v-for="news in data">
-          <NewsSingle :title="news.title" :date="news.created_at" :content="news.content"></NewsSingle>
-        </div> -->
-
-        <NewsSingle title="Test1" date="20-10-2024. 15:34:43" content="Lorem ipsum"></NewsSingle>
-        <NewsSingle title="Test2" date="21-10-2024. 15:34:43" content="Lorem ipsum"></NewsSingle>
-        <NewsSingle title="Test2" date="22-10-2024. 15:34:43" content="Lorem ipsum"></NewsSingle>
+        <NewsForm v-if="user.role.id == Role.Admin"></NewsForm>
+        <NewsSingle v-for="article in articles" :key="article.id" :article="article"></NewsSingle>
 
         
       </ion-content>
@@ -38,26 +31,25 @@
   </template>
 
   <script>
-    import axios from 'axios';
-
-    export default {
-      data() {
-        return {
-          data: null,
-        };
-      },
-      async mounted() {
-        try {
-          const response = await axios.get('articles');
-          this.data = response.data;
-          this.data.reverse();
-
-          console.log(this.data);
-        } catch (error) {
-          console.error('Error fetching data:', error);
-        }
-      },
-    };
+  import { mapGetters, mapActions } from 'vuex';
+  import Role from '@/classes/Role';
+  export default {
+    data() {
+      return {
+        data: null,
+      };
+    },
+    computed: {
+      ...mapGetters('articles', ['articles']),
+      ...mapGetters('auth', ['user'])
+    },
+    mounted() {
+      this.getArticles();
+    },
+    methods: {
+      ...mapActions('articles', ['getArticles', 'addArticles'])
+    }
+  };
   </script>
   
   <style scoped>
