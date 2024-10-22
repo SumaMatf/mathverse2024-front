@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "705457202966",
+    "project_id": "mathversesuma",
+    "storage_bucket": "mathversesuma.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:705457202966:android:3386d70117331d823e5237",
+        "android_client_info": {
+          "package_name": "com.sumamatf.mathverse"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGm5a1jE7TlDy6ttyJGNoLPAz-VWn1N9w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
