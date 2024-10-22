@@ -16,27 +16,27 @@ const routes: Array<RouteRecordRaw> = [
         name: 'agenda'
       },       
       {
-        path: 'news',
+        path: '/news',
         component: () => import ('../views/News.vue'),
         name: 'news'
       },       
       {
-        path: 'qna',
+        path: '/qna',
         component: () => import ('../views/QnA.vue'),
         name: 'qna'
       },
       {
-        path: 'answers',
+        path: '/answers',
         component: () => import ('../views/Answers.vue'),
         name: 'answers'
       },
       {
-        path: 'checkin',
+        path: '/checkin',
         component: () => import('../views/Checkin.vue'),
         name: 'checkin'
       },
       {
-        path: 'contact',
+        path: '/contact',
         component: () => import ('../views/Contact.vue'),
         name: 'contact'
       }

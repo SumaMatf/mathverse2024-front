@@ -90,7 +90,7 @@
     },
     {
       title: 'Izlogujte se',
-      url: 'logout',
+      url: '/logout',
       iosIcon: powerOutline,
       mdIcon: powerSharp
     }

@@ -30,7 +30,7 @@ const actions = {
     addArticle({commit}, payload) {
         axios.post("/articles", payload)
             .then( (res) => {
-                commit('addArticle', res.data)
+                commit('pushArticle', res.data)
             })
             .catch ( () => {
                 console.error("Error adding article");

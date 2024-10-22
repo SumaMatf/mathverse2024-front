@@ -21,8 +21,6 @@
         <ion-accordion-group v-if="qnas">
           <QnASingle v-for="qna in qnas" :key="qna.id" :qna="qna" :authUser="user"></QnASingle>
         </ion-accordion-group>
-        
-
       </ion-content>
     </ion-page>
     
@@ -33,10 +31,7 @@
   import QnAFormGuest from '@/components/QnAFormGuest.vue';
 import QnASingle from '@/components/QnASingle.vue';
 import {
-    IonAccordion,
     IonContent,
-    IonLabel,
-    IonItem,
     IonAccordionGroup,
     IonButtons,
     IonHeader, 

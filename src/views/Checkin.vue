@@ -25,7 +25,7 @@
   
   <script>
   import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
-  
+  import { IonButton, IonPage } from '@ionic/vue';
   export default {
     data() {
       return {
@@ -34,13 +34,13 @@
       };
     },
     methods: {
-      async startScan() {
+      startScan() {
         if (this.isScanning) return;
         this.isScanning = true;
   
         // Check for permission to use the camera
-        const status = await BarcodeScanner.checkPermission({ force: true });
-  
+        const status = BarcodeScanner.checkPermission({ force: true });
+        
         if (status.granted) {
           // Hide the background to allow camera scanning
           BarcodeScanner.hideBackground();
@@ -66,7 +66,7 @@
         BarcodeScanner.showBackground();
       }
     },
-    beforeDestroy() {
+    beforeUnmount() {
       // Stop the scanner when the component is destroyed
       this.stopScan();
     }

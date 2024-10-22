@@ -1,9 +1,3 @@
-<script setup>
-    import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-    import NewsSingle from '../components/NewsSingle.vue';
-    import NewsForm from '../components/NewsForm.vue';
-</script>
-
 <template>
     <ion-page>
       <ion-header :translucent="true">
@@ -23,8 +17,9 @@
         </ion-header>
 
         <NewsForm v-if="user.role.id == Role.Admin"></NewsForm>
-        <NewsSingle v-for="article in articles" :key="article.id" :article="article"></NewsSingle>
-
+        <ion-accordion-group v-if="articles.length">
+          <NewsSingle v-for="article in articles" :key="article.id" :article="article"></NewsSingle>
+        </ion-accordion-group>
         
       </ion-content>
     </ion-page>
@@ -33,11 +28,28 @@
   <script>
   import { mapGetters, mapActions } from 'vuex';
   import Role from '@/classes/Role';
+  import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar, IonAccordionGroup } from '@ionic/vue';
+  import NewsSingle from '../components/NewsSingle.vue';
+  import NewsForm from '../components/NewsForm.vue';
+
   export default {
     data() {
       return {
         data: null,
+        Role
       };
+    },
+    components: {
+      IonButtons, 
+      IonContent, 
+      IonHeader, 
+      IonMenuButton, 
+      IonPage, 
+      IonTitle, 
+      IonToolbar, 
+      NewsSingle, 
+      NewsForm,
+      IonAccordionGroup
     },
     computed: {
       ...mapGetters('articles', ['articles']),
