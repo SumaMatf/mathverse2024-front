@@ -8,16 +8,15 @@
     <ion-page>
       <ion-header>
         <ion-toolbar>
-          <ion-title>Checkin</ion-title>
+          <ion-title>Check In</ion-title>
         </ion-toolbar>
       </ion-header>
   
       <ion-content class="ion-padding">
-        <ion-button @click="startScan" :disabled="isScanning">Scan QR Code</ion-button>
+        <ion-button @click="startScan" :disabled="isScanning">Pokreni skener</ion-button>
         
-        <div v-if="qrCodeResult" class="qr-result">
-          <p>QR Code Contents:</p>
-          <p>{{ qrCodeResult }}</p>
+        <div v-if="result" class="qr-result">
+          <p>{{ result }}</p>
         </div>
       </ion-content>
     </ion-page>
@@ -26,14 +25,16 @@
   <script>
   import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
   import { IonButton, IonPage } from '@ionic/vue';
+  import { mapActions } from 'vuex';
   export default {
     data() {
       return {
-        qrCodeResult: null,
+        result: '',
         isScanning: false
       };
     },
     methods: {
+      ...mapActions('auth', ['checkin']),
       startScan() {
         if (this.isScanning) return;
         this.isScanning = true;
@@ -41,24 +42,21 @@
         // Check for permission to use the camera
         const status = BarcodeScanner.checkPermission({ force: true });
         
-        if (status.granted) {
           // Hide the background to allow camera scanning
           BarcodeScanner.hideBackground();
   
           // Start the scanning
           BarcodeScanner.startScan().then(result => {
             if (result.hasContent) {
-              this.qrCodeResult = result.content; // Display the QR code result
+              this.result = result.content; // Display the QR code result
+              this.checkin({lecture_id: parseInt(result.content)});
             }
             this.stopScan();
           }).catch(err => {
             console.error('Error scanning QR code:', err);
             this.stopScan();
           });
-        } else {
-          console.log('Camera permission not granted');
-          this.isScanning = false;
-        }
+
       },
       stopScan() {
         this.isScanning = false;
@@ -77,7 +75,7 @@
   .qr-result {
     margin-top: 20px;
     font-size: 18px;
-    color: #333;
+    color: #88383b;
   }
   </style>
   

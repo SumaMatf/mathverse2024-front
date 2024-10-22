@@ -49,8 +49,8 @@ const actions = {
         commit('clearToken')
         router.replace({name: 'login'})
     },
-    checkin(payload) {
-        axios.post("/lectures/checkin", {lecture_id: payload})
+    checkin({commit}, payload) {
+        axios.post("/lectures/checkin", payload)
             .then( () =>  {
                 alert("Uspesno cekiranje")
             })
