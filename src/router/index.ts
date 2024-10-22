@@ -11,7 +11,7 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('../views/Menu.vue'),
     children: [
       {
-        path: '',
+        path: '/',
         component: () => import ('../views/Agenda.vue'),
         name: 'agenda'
       },       
@@ -31,6 +31,11 @@ const routes: Array<RouteRecordRaw> = [
         name: 'answers'
       },
       {
+        path: 'checkin',
+        component: () => import('../views/Checkin.vue'),
+        name: 'checkin'
+      },
+      {
         path: 'contact',
         component: () => import ('../views/Contact.vue'),
         name: 'contact'
@@ -41,6 +46,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/login',
     component: () => import('../views/Login.vue'),
     name: 'login'
+  },
+  {
+    path: '/logout',
+    component: () => import('../views/Logout.vue'),
+    name: 'logout'
   }
   ]
   /*{

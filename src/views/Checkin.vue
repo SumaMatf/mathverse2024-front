@@ -8,7 +8,7 @@
     <ion-page>
       <ion-header>
         <ion-toolbar>
-          <ion-title>QR Code Scanner</ion-title>
+          <ion-title>Checkin</ion-title>
         </ion-toolbar>
       </ion-header>
   

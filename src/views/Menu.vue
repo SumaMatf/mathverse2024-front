@@ -29,7 +29,6 @@
   
   <script setup lang="ts">
   import {
-    IonApp,
     IonPage,
     IonContent,
     IonIcon,
@@ -45,31 +44,17 @@
   } from '@ionic/vue';
   import { ref } from 'vue';
   import {
-    archiveOutline,
-    archiveSharp,
-    bookmarkOutline,
-    bookmarkSharp,
     callOutline,
     callSharp,
-    heartOutline,
-    heartSharp,
     helpOutline,
     helpSharp,
     listOutline,
     listSharp,
-    locate,
-    locateOutline,
-    mailOutline,
-    mailSharp,
-    paperPlaneOutline,
-    paperPlaneSharp,
+    powerOutline,
+    powerSharp,
     qrCodeOutline,
     timeOutline,
     timeSharp,
-    trashOutline,
-    trashSharp,
-    warningOutline,
-    warningSharp,
   } from 'ionicons/icons';
   
   const selectedIndex = ref(0);
@@ -93,12 +78,6 @@
       mdIcon: helpSharp,
     },
     {
-      title: 'Odgovori',
-      url: 'answers',
-      iosIcon: helpOutline,
-      mdIcon: helpSharp,
-    },
-    {
       title: 'Čekiranje',
       url: 'checkin',
       iosIcon: qrCodeOutline,
@@ -109,6 +88,12 @@
       iosIcon: callOutline,
       mdIcon: callSharp,
     },
+    {
+      title: 'Izlogujte se',
+      url: 'logout',
+      iosIcon: powerOutline,
+      mdIcon: powerSharp
+    }
   ];
   const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   

@@ -8,7 +8,7 @@
             </ion-item>
             <br />
             <ion-item>
-                <ion-button @click.prevent="answerQuestionHandle">Posaljite odgovor</ion-button>
+              <ion-button @click.prevent="answerQuestionHandle" style="padding: 20px 0; font-size: large !important;" class="postButton">Pošaljite odgovor</ion-button>
             </ion-item>
         </ion-list>
     
@@ -58,5 +58,14 @@ export default {
 </script>
 
 <style scoped>
-
+.postButton {
+  --background: #88383b;
+  --color: white;
+  --border-radius: 10px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --padding-start: 15px;
+  --padding-end: 15px;
+  --padding-top: 15px;
+  --padding-bottom: 15px;
+}
 </style>
