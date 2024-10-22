@@ -5,7 +5,7 @@
         <ion-label class="loginLabel">Ulogujte se</ion-label>
         <ion-list>
           <ion-item>
-            <ion-label fixed>Korisničko ime</ion-label>
+            <ion-label fixed>E-mail</ion-label>
           </ion-item>
           <ion-item>
             <ion-input v-model="email" type="text"></ion-input>

@@ -3,39 +3,51 @@ import { RouteRecordRaw } from 'vue-router';
 
 const routes: Array<RouteRecordRaw> = [
   {
-        path: '/',
+  path: '/',
+  component: () => import('../views/Master.vue'),
+  children: [
+  {
+    path: "/",
+    component: () => import('../views/Menu.vue'),
+    children: [
+      {
+        path: '',
         component: () => import ('../views/Agenda.vue'),
         name: 'agenda'
       },       
       {
-        path: '/news',
+        path: 'news',
         component: () => import ('../views/News.vue'),
         name: 'news'
       },       
       {
-        path: '/qna',
+        path: 'qna',
         component: () => import ('../views/QnA.vue'),
         name: 'qna'
       },
       {
-        path: '/answers',
+        path: 'answers',
         component: () => import ('../views/Answers.vue'),
         name: 'answers'
       },
       {
-        path: '/contact',
+        path: 'contact',
         component: () => import ('../views/Contact.vue'),
         name: 'contact'
-      },
+      }
+    ]
+  },
   {
     path: '/login',
     component: () => import('../views/Login.vue'),
     name: 'login'
   }
+  ]
   /*{
     path: '/folder/:id',
     component: () => import ('../views/FolderPage.vue')
   }*/
+}
 ]
 
 const router = createRouter({
