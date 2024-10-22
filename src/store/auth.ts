@@ -34,7 +34,6 @@ const mutations = {
 
 const actions = {
     login({commit}, payload) {
-        console.log(payload);
         axios.post("login", payload)
         .then( (res) => {
             commit('setUser', res.data.user)
@@ -48,7 +47,7 @@ const actions = {
     logout({commit}) {
         commit('clearUser')
         commit('clearToken')
-        router.push({name: 'login'})
+        router.replace({name: 'login'})
     },
     checkin(payload) {
         axios.post("/lectures/checkin", {lecture_id: payload})
