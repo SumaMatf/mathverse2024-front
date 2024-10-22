@@ -2,8 +2,8 @@ import axios from '@/axios'
 import router from '@/router/index'
 
 const state = {
-    user: JSON.parse(localStorage.getItem('user')) || {},
-    token: localStorage.getItem('jwt-token') || ''
+    user: JSON.parse(localStorage.getItem('user')) || [],
+    token: localStorage.getItem('jwt-token')
 }
 
 const getters = {
@@ -34,6 +34,7 @@ const mutations = {
 
 const actions = {
     login({commit}, payload) {
+        console.log(payload);
         axios.post("login", payload)
         .then( (res) => {
             commit('setUser', res.data.user)

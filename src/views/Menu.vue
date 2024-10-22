@@ -76,36 +76,36 @@
   const appPages = [
     {
       title: 'Agenda',
-      url: '/menu/agenda',
+      url: '/',
       iosIcon: timeOutline,
       mdIcon: timeSharp,
     },
     {
       title: 'Novosti',
-      url: '/menu/news',
+      url: 'news',
       iosIcon: listOutline,
       mdIcon: listSharp,
     },
     {
       title: 'QnA',
-      url: '/menu/qna',
+      url: 'qna',
       iosIcon: helpOutline,
       mdIcon: helpSharp,
     },
     {
       title: 'Odgovori',
-      url: '/menu/answers',
+      url: 'answers',
       iosIcon: helpOutline,
       mdIcon: helpSharp,
     },
     {
       title: 'Čekiranje',
-      url: '/folder/Favorites',
+      url: 'checkin',
       iosIcon: qrCodeOutline,
     },
     {
       title: 'Kontakt',
-      url: '/menu/contact',
+      url: 'contact',
       iosIcon: callOutline,
       mdIcon: callSharp,
     },

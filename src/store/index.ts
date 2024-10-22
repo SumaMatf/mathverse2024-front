@@ -2,6 +2,7 @@ import { createStore } from 'vuex'
 
 import auth from './auth'
 import articles from './modules/articles'
+import qna from './modules/qna'
 
 const store = createStore({
     modules: {
@@ -15,6 +16,12 @@ const store = createStore({
             namespaced: true,
             modules: {
                 articles
+            }
+        },
+        qna: {
+            namespaced: true,
+            modules: {
+                qna
             }
         }
     }
