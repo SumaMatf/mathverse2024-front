@@ -1,56 +1,48 @@
 <template>
-    <ion-card>
-        <h2 style="margin: 20px auto; text-align: center;">Postavite nam pitanje!</h2>
-        <ion-list style="text-align:center" lines="none">
-            <ion-item>
-                <ion-input v-model="title" fill="outline" type="text"></ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-button @click="post" style="margin: auto; padding: 20px 0; font-size: large !important;" class = "postButton">Posaljite pitanje</ion-button>
-            </ion-item>
-        </ion-list>
-    </ion-card>
-    
+    <h2 style="margin: 20px auto; text-align: center;">Postavite nam pitanje!</h2>
+    <ion-list style="text-align:center" lines="none">
+      <ion-item>
+        <ion-input v-model="title" fill="outline" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-button @click="addQnaHandle" style="margin: auto; padding: 20px 0; font-size: large !important;" class="postButton">Pošaljite pitanje</ion-button>
+      </ion-item>
+    </ion-list>
 </template>
 
-<script lang='ts' setup>
-    import { ref } from 'vue';
-    import axios from 'axios';
-    import router from '../router/index';   
+<script>
+import {
+    IonCard,
+    IonItem,
+    IonList,
+    IonInput,
+    IonButton,
+} from '@ionic/vue';
 
-    import {
-        IonApp,
-        IonPage,
-        IonContent,
-        IonIcon,
-        IonCard,
-        IonItem,
-        IonLabel,
-        IonList,
-        IonListHeader,
-        IonMenu,
-        IonMenuToggle,
-        IonNote,
-        IonRouterOutlet,
-        IonSplitPane,
-        IonInput,
-        IonButton,
-        IonTextarea
-    } from '@ionic/vue';
+import { mapActions } from 'vuex';
 
-    var user = localStorage.getItem('user');
-    const post = () => {
-        axios.post('/questions', { title: title.value, contributedBy: 1})
-        .then( (response) => {
-            alert("Added successfully")
-        })
-        .catch( () => {
-            alert("Invalid")
-        })
+export default {
+  name: "QnAFormGuest",
+  data() {
+    return {
+      title: ''
     }
-
-    const title = ref('');
-    const content = ref('');
+  },
+  components: {
+    IonCard,
+    IonItem,
+    IonList,
+    IonInput,
+    IonButton,
+  },
+  methods: {
+    ...mapActions('qna', ['addQna']),
+    addQnaHandle() {
+      this.addQna({title: this.title})
+      this.title = ''
+    }
+  }
+}
 </script>
 
 <style scoped>

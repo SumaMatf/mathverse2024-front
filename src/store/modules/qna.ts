@@ -42,8 +42,8 @@ const actions = {
             });
     },
     answerQuestion({commit}, payload) {
-        const {question_id, answer} = payload
-        axios.post(`/questions/${question_id}/answers`, answer)
+        const {question_id, content} = payload
+        axios.post(`/questions/${question_id}/answers`, {content: content})
             .then( (res) => {
                 commit('updateQna', res.data)
             })

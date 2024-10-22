@@ -1,14 +1,3 @@
-<script setup>
-    import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-    import QnAFormAdmin from '../components/QnAFormAdmin.vue';
-    import QnAFormGuest from '../components/QnAFormGuest.vue';
-
-    /*let value = JSON.parse(localStorage.getItem('user'));
-    console.log(value);*/
-    let role = 'admin';
-    
-</script>
-
 <template>
     <ion-page>
       <ion-header :translucent="true">
@@ -26,11 +15,12 @@
             <ion-title size="large">{{ $route.params.id }}</ion-title>
           </ion-toolbar>
         </ion-header>
-
-        <QnAFormGuest></QnAFormGuest>
         
-        <QnASingle></QnASingle>
-        <QnASingle></QnASingle>
+        <QnAFormGuest />
+
+        <ion-accordion-group v-if="qnas">
+          <QnASingle v-for="qna in qnas" :key="qna.id" :qna="qna" :authUser="user"></QnASingle>
+        </ion-accordion-group>
         
 
       </ion-content>
@@ -40,27 +30,51 @@
 
 
 <script>
-    import axios from 'axios';
-    import QnASingle from '../components/QnASingle.vue';
-
-    export default {
-    data() {
-        return {
-        data: null,
-        };
+  import QnAFormGuest from '@/components/QnAFormGuest.vue';
+import QnASingle from '@/components/QnASingle.vue';
+import {
+    IonAccordion,
+    IonContent,
+    IonLabel,
+    IonItem,
+    IonAccordionGroup,
+    IonButtons,
+    IonHeader, 
+    IonMenuButton, 
+    IonPage, 
+    IonTitle, 
+    IonToolbar
+  } from '@ionic/vue'
+  
+  import { mapActions, mapGetters } from 'vuex';
+  
+  export default {
+    components: {
+      IonContent,
+      IonAccordionGroup,
+      IonButtons,
+      IonHeader, 
+      IonMenuButton, 
+      IonPage, 
+      IonTitle, 
+      IonToolbar,
+      QnASingle,
+      QnAFormGuest
     },
-    async mounted() {
-        try {
-        const response = await axios.get('questions');
-        this.data = response.data;
-        this.data.reverse();
-
-        console.log(this.data);
-        } catch (error) {
-        console.error('Error fetching data:', error);
-        }
+    computed: {
+      ...mapGetters('auth', ['user']),
+      ...mapGetters('qna', ['qnas']),
     },
-    };
+    mounted() {
+      this.getQnas()
+    },
+    methods: {
+      ...mapActions('qna', ['getQnas']),
+      showAnswerInAccordion(qna) {
+        return qna.question && qna.answer;
+      },
+    }
+  };
 </script>
 
 <style scoped>
