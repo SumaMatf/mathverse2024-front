@@ -7,13 +7,13 @@
 <template>
     <ion-page>
       <ion-header>
-        <ion-toolbar>
+        <ion-toolbar style="--background:#220e0f">
           <ion-title>Check In</ion-title>
         </ion-toolbar>
       </ion-header>
   
-      <ion-content class="ion-padding">
-        <ion-button @click="startScan" :disabled="isScanning">Pokreni skener</ion-button>
+      <ion-content class="ion-padding" style=" --background: url('../../public/banner2.png') 0 0/100% 100% no-repeat; text-align: center;">
+        <ion-button @click="startScan" :disabled="isScanning" style="margin: 100px auto; padding: 20px 0; font-size: xx-large !important;" >Pokreni skener</ion-button>
         
         <div v-if="result" class="qr-result">
           <p>{{ result }}</p>

@@ -1,7 +1,9 @@
 <template>
     <ion-accordion>
-        <ion-item slot="header" color="light">
-          <ion-label>{{ article.title }}</ion-label>
+        <ion-item slot="header">
+          <ion-label><h2><b>{{ article.title }}</b></h2></ion-label>
+          <br>
+          <span>{{ article.created_at }}</span>
         </ion-item>
         <div class="ion-padding" slot="content">{{article.content}}</div>
     </ion-accordion>
@@ -15,6 +17,7 @@ import {
 } from '@ionic/vue'
 
 import Role from '@/classes/Role';
+
 
 export default {
 name: 'QnASingle',

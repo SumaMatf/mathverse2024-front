@@ -1,9 +1,10 @@
 <template>
   <ion-page>
     <ion-content>
-      <ion-card class="ion-text-center" style="margin:auto; text-align: center; width: 400px; padding: 30px;">
-        <ion-label class="loginLabel">Ulogujte se</ion-label>
-        <ion-list>
+      <ion-card class="ion-text-center" style="margin:150px auto; text-align: center; width: 400px; padding: 30px;">
+        <img src="/logo2.png" alt="">
+        <ion-label class="loginLabel"><h1>ULOGUJTE SE</h1></ion-label>
+        <ion-list lines="none">
           <ion-item>
             <ion-label fixed>E-mail</ion-label>
           </ion-item>
@@ -18,7 +19,7 @@
           </ion-item>
         </ion-list>
         
-        <ion-button @click="loginHandle">Ulogujte se</ion-button>
+        <ion-button @click="loginHandle" style="font-size: large !important;">Ulogujte se</ion-button>
       </ion-card>
     </ion-content>
   </ion-page>
@@ -194,10 +195,6 @@ export default {
 
   ion-content {
     --background: url("../public/loginBanner.png");
-  }
-
-  .loginLabel {
-    font-size: larger !important;
   }
 
   ion-input {

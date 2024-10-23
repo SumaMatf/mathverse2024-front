@@ -1,6 +1,7 @@
 <template>
+  <ion-card style="margin: 30px; padding: 10px; border-radius: 10px;">
     <h2 style="margin: 20px auto; text-align: center;">Postavite nam pitanje!</h2>
-    <ion-list style="text-align:center" lines="none">
+    <ion-list style="text-align:center; --background: none;" lines="none">
       <ion-item>
         <ion-input v-model="title" fill="outline" type="text"></ion-input>
       </ion-item>
@@ -8,6 +9,7 @@
         <ion-button @click="addQnaHandle" style="margin: auto; padding: 20px 0; font-size: large !important;" class="postButton">Pošaljite pitanje</ion-button>
       </ion-item>
     </ion-list>
+  </ion-card> 
 </template>
 
 <script>

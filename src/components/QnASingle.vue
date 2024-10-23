@@ -1,6 +1,6 @@
 <template>
-        <ion-accordion v-if="authUser.role.id == Role.Admin">
-            <ion-item slot="header" color="light">
+        <ion-accordion v-if="authUser.role.id == Role.Admin" >
+            <ion-item slot="header" style="background-color: #220e0f;">
               <ion-label>{{ qna.title }}</ion-label>
             </ion-item>
             <div v-if="qna.answer" class="ion-padding" slot="content">{{qna.answer.content}}</div>

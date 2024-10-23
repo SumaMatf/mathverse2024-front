@@ -1,11 +1,11 @@
 <template>
     <ion-page>
       <ion-split-pane content-id="main-content">
-        <ion-menu content-id="main-content" type="overlay">
+        <ion-menu content-id="main-content" type="overlay" style="--ion-item-background:#220e0f; --ion-background-color-step-150: #100708;">
           <ion-content>
             <ion-list id="inbox-list">
               <div style="display: inline-flex;">
-                <img src="../public/suma.png" style="height: 50px;" alt="">
+                <img src="/public/suma.png" style="height: 50px;" alt="">
                 <div>
                   <ion-list-header>MATHVERSE 2024</ion-list-header>
                   <ion-note>sumamatf.com</ion-note>
@@ -72,7 +72,7 @@
       mdIcon: listSharp,
     },
     {
-      title: 'QnA',
+      title: 'Q&A',
       url: 'qna',
       iosIcon: helpOutline,
       mdIcon: helpSharp,

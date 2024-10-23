@@ -1,15 +1,15 @@
 <template>
     <ion-page>
       <ion-header :translucent="true">
-        <ion-toolbar>
+        <ion-toolbar style="--background:#220e0f">
           <ion-buttons slot="start">
             <ion-menu-button color="primary"></ion-menu-button>
           </ion-buttons>
-          <ion-title>QnA</ion-title>
+          <ion-title>Q&A</ion-title>
         </ion-toolbar>
       </ion-header>
   
-      <ion-content :fullscreen="true">
+      <ion-content :fullscreen="true" style=" --background: url('../../public/banner2.png') 0 0/100% 100% no-repeat;">
         <ion-header collapse="condense">
           <ion-toolbar>
             <ion-title size="large">{{ $route.params.id }}</ion-title>
@@ -18,8 +18,9 @@
         
         <QnAFormGuest />
 
-        <ion-accordion-group v-if="qnas">
-          <QnASingle v-for="qna in qnas" :key="qna.id" :qna="qna" :authUser="user"></QnASingle>
+        <ion-accordion-group v-if="qnas" style="background-color: #333333;">
+            <QnASingle v-for="qna in qnas" :key="qna.id" :qna="qna" :authUser="user"></QnASingle>
+
         </ion-accordion-group>
       </ion-content>
     </ion-page>
@@ -33,6 +34,7 @@ import QnASingle from '@/components/QnASingle.vue';
 import {
     IonContent,
     IonAccordionGroup,
+    IonAccordion,
     IonButtons,
     IonHeader, 
     IonMenuButton, 

@@ -1,7 +1,7 @@
 <template>
     <ion-page>
       <ion-header :translucent="true">
-        <ion-toolbar>
+        <ion-toolbar style="--background:#220e0f">
           <ion-buttons slot="start">
             <ion-menu-button color="primary"></ion-menu-button>
           </ion-buttons>
@@ -9,7 +9,7 @@
         </ion-toolbar>
       </ion-header>
   
-      <ion-content :fullscreen="true">
+      <ion-content :fullscreen="true" style=" --background: url('../../public/banner2.png') 0 0/100% 100% no-repeat;" >
         <ion-header collapse="condense">
           <ion-toolbar>
             <ion-title size="large">{{ $route.params.id }}</ion-title>
@@ -17,7 +17,7 @@
         </ion-header>
 
         <NewsForm v-if="user.role.id == Role.Admin"></NewsForm>
-        <ion-accordion-group v-if="articles.length">
+        <ion-accordion-group v-if="articles.length" style="margin: 50px; --border-radius: 30px;">
           <NewsSingle v-for="article in articles" :key="article.id" :article="article"></NewsSingle>
         </ion-accordion-group>
         
