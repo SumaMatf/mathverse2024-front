@@ -5,7 +5,7 @@
         <ion-content>
           <ion-list id="inbox-list">
             <div style="display: inline-flex;">
-              <img src="../public/suma.png" style="height: 50px;" alt="">
+              <img src="../suma.png" style="height: 50px;" alt="">
               <div>
                 <ion-list-header>MATHVERSE 2024</ion-list-header>
                 <ion-note>sumamatf.com</ion-note>

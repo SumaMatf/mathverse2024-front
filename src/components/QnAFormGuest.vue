@@ -35,6 +35,7 @@ export default {
     IonList,
     IonInput,
     IonButton,
+    IonCard,
   },
   methods: {
     ...mapActions('qna', ['addQna']),

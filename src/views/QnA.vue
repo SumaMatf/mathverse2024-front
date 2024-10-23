@@ -9,7 +9,7 @@
         </ion-toolbar>
       </ion-header>
   
-      <ion-content :fullscreen="true" style=" --background: url('../../public/banner2.png') 0 0/100% 100% no-repeat;">
+      <ion-content :fullscreen="true" style=" --background: url('/banner2.png') 0 0/100% 100% no-repeat;">
         <ion-header collapse="condense">
           <ion-toolbar>
             <ion-title size="large">{{ $route.params.id }}</ion-title>
@@ -34,7 +34,6 @@ import QnASingle from '@/components/QnASingle.vue';
 import {
     IonContent,
     IonAccordionGroup,
-    IonAccordion,
     IonButtons,
     IonHeader, 
     IonMenuButton, 

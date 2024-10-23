@@ -1,7 +1,5 @@
 <script setup>
-    import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-    import NewsSingle from '../components/NewsSingle.vue';
-    import NewsForm from '../components/NewsForm.vue';
+    import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/vue';
 </script>
 
 <template>
@@ -12,7 +10,7 @@
         </ion-toolbar>
       </ion-header>
   
-      <ion-content class="ion-padding" style=" --background: url('../../public/banner2.png') 0 0/100% 100% no-repeat; text-align: center;">
+      <ion-content class="ion-padding" style=" --background: url('/banner2.png') 0 0/100% 100% no-repeat; text-align: center;">
         <ion-button @click="startScan" :disabled="isScanning" style="margin: 100px auto; padding: 20px 0; font-size: xx-large !important;" >Pokreni skener</ion-button>
         
         <div v-if="result" class="qr-result">

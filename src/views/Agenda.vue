@@ -5,11 +5,14 @@
     IonToolbar,
     IonTabBar,
     IonTabButton,
+    IonButtons,
     IonContent,
     IonHeader,
     IonTitle,
     IonLabel,
-    IonIcon} from '@ionic/vue';
+    IonPage,
+    IonMenuButton
+  } from '@ionic/vue';
     import agenda24 from '../components/agenda/agenda24.vue';
     import agenda25 from '../components/agenda/agenda25.vue';
 
@@ -27,7 +30,7 @@
         </ion-toolbar>
       </ion-header>
   
-      <ion-content style=" --background: url('../../public/banner2.png') 0 0/100% 100% no-repeat;">
+      <ion-content style=" --background: url('/banner2.png') 0 0/100% 100% no-repeat;">
         <ion-header collapse="condense">
           <ion-toolbar>
             <ion-title size="large">{{ $route.params.id }}</ion-title>

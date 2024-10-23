@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { IonIcon } from '@ionic/vue';
+  import { IonIcon, IonPage, IonContent, IonCard, IonHeader, IonToolbar, IonTitle, IonButtons, IonMenuButton } from '@ionic/vue';
   import { callOutline, mailOutline, logoIonic } from 'ionicons/icons';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonIcon },
+    components: { IonIcon, IonPage, IonContent, IonCard, IonHeader, IonToolbar, IonTitle, IonButtons, IonMenuButton },
     setup() {
       return { callOutline, mailOutline, logoIonic };
     },
@@ -22,7 +22,7 @@
         </ion-toolbar>
       </ion-header>
   
-      <ion-content :fullscreen="true" style=" --background: url('/public/banner2.png') 0 0/100% 100% no-repeat;">
+      <ion-content :fullscreen="true" style=" --background: url('/banner2.png') 0 0/100% 100% no-repeat;">
         <ion-header collapse="condense">
           <ion-toolbar>
             <ion-title size="large">{{ $route.params.id }}</ion-title>
@@ -30,7 +30,7 @@
         </ion-header>
 
         <ion-card  style="padding: 30px; max-width: 400px; text-align: center;" class="ion-padding contact-card">
-            <img src="../../public/suma.png" style="height: 200px; margin: 10px auto;" alt="">
+            <img src="/suma.png" style="height: 200px; margin: 10px auto;" alt="">
             <br>
             <h2>KONTAKTIRAJTE NAS</h2>
             <div style="margin: 10px 0; vertical-align: center;" class="contact">
