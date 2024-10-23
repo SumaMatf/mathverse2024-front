@@ -42,7 +42,7 @@
     IonRouterOutlet,
     IonSplitPane,
   } from '@ionic/vue';
-  import { ref } from 'vue';
+  import { onMounted, ref } from 'vue';
   import {
     callOutline,
     callSharp,
@@ -56,7 +56,10 @@
     timeOutline,
     timeSharp,
   } from 'ionicons/icons';
-  
+  import { PushNotifications } from '@capacitor/push-notifications';
+  import { isPlatform } from '@ionic/vue'; 
+  import { messaging, getToken, firebase, onMessage } from "@/firebase"; 
+  import { useStore } from 'vuex';
   const selectedIndex = ref(0);
   const appPages = [
     {
@@ -95,12 +98,66 @@
       mdIcon: powerSharp
     }
   ];
-  const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   
   const path = window.location.pathname.split('/')[1];
   if (path !== undefined) {
     selectedIndex.value = appPages.findIndex((page) => page.title.toLowerCase() === path.toLowerCase());
   }
+  const store = useStore()
+  let notificationMessage = '';
+  const registerWebPush = async () => {
+            try {
+                await Notification.requestPermission();
+
+                const token = await getToken(messaging, { vapidKey: 'BAE1CTxw44IianS8VEqiqvNfQgjGhAHVcdpOzcdIhd37t6qk0wwVUE964LT08ZT08OFLJdM9K_cxItlCGSVHWcw' });
+                if (token) {
+                    console.log('FCM Token:', token);
+
+                    store.dispatch('auth/addDeviceTokens', token)
+
+                    onMessage(messaging, (payload) => {
+                        console.log('Message received. ', payload);
+                        new Notification(payload.notification.title, { body: payload.notification.body })
+                    });
+                } 
+            }catch (error) {
+                console.error('An error occurred while registering for push notifications:', error);
+            }
+        }
+
+      const initializePushNotifications = () => {
+        if (isPlatform('capacitor')) {
+
+          setupNativePushNotifications();
+        } else if (isPlatform('hybrid') || isPlatform('mobileweb') || isPlatform('desktop')) {
+
+          registerWebPush();
+        }
+      }
+
+    const setupNativePushNotifications = () => {
+
+      PushNotifications.requestPermissions().then(result => {
+        if (result.receive === 'granted') {
+
+          PushNotifications.register();
+        } else {
+          console.log('Push notification permission not granted');
+        }
+      });
+
+      PushNotifications.addListener('pushNotificationReceived', (notification) => {
+        notificationMessage = `Push received: ${notification.title}`;
+      });
+
+      PushNotifications.addListener('pushNotificationActionPerformed', (notification) => {
+        notificationMessage = `Notification action performed: ${notification.notification.data}`;
+      });
+    }
+    onMounted(() => {
+      initializePushNotifications();
+    })
+
   </script>
   
   <style scoped>

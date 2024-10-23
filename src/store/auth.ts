@@ -57,6 +57,13 @@ const actions = {
             .catch (() => {
                 alert("Neuspesno cekiranje")
             })
+    },
+    addDeviceTokens({commit}, payload) {
+        axios.post('/users/device-tokens', {device_token: payload})
+            .then( () => {})
+            .catch((error) => {
+                console.log(JSON.stringify(error));
+            })
     }
 }
 
