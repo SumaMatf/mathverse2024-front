@@ -194,7 +194,7 @@ export default {
   }
 
   ion-content {
-    --background: url("../public/loginBanner.png");
+    --background: url("/loginBanner.png");
   }
 
   ion-input {
