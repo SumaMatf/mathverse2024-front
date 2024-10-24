@@ -5,7 +5,7 @@
           <br>
           <span>{{ article.created_at }}</span>
         </ion-item>
-        <div class="ion-padding" slot="content">{{article.content}}</div>
+        <div class="ion-padding" v-html="article.content" slot="content"></div>
     </ion-accordion>
 </template>
 

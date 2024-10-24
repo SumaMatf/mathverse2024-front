@@ -96,7 +96,7 @@
                     <br>
                     <i>Jelena Jocković - <b>Matematički fakultet</b></i>
                     <br>
-                    <i>Mihailo Srbakoski - <b>Matematički fakultet</b></i>
+                    <i>Mihajlo Srbakoski - <b>Matematički fakultet</b></i>
                     <br>
                     <i>Natalija Lazić - <b>Junior data scientist</b></i>
                 </td>
