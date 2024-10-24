@@ -16,7 +16,7 @@
           </ion-toolbar>
         </ion-header>
 
-        <NewsForm v-if="user.role.id == Role.Admin"></NewsForm>
+        <NewsForm v-if="user && user.role.id == Role.Admin"></NewsForm>
         <ion-accordion-group v-if="articles.length" style="margin: 50px; --border-radius: 30px;">
           <NewsSingle v-for="article in articles" :key="article.id" :article="article"></NewsSingle>
         </ion-accordion-group>
