@@ -31,6 +31,7 @@ export default {
     }
   },
   components: {
+    IonCard,
     IonItem,
     IonList,
     IonInput,

@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { IonIcon } from '@ionic/vue';
+  import { IonIcon, IonPage, IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent, IonCard  } from '@ionic/vue';
   import { callOutline, mailOutline, logoIonic } from 'ionicons/icons';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonIcon },
+    components: { IonIcon, IonPage, IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent, IonCard },
     setup() {
       return { callOutline, mailOutline, logoIonic };
     },

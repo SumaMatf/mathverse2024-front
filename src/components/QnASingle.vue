@@ -1,5 +1,5 @@
 <template>
-        <ion-accordion v-if="authUser.role.id == Role.Admin" >
+        <ion-accordion v-if="authUser && (authUser.role.id == Role.Admin || (authUser.role.id == Role.Participant && qna.answer))" >
             <ion-item slot="header" style="background-color: #220e0f;">
               <ion-label>{{ qna.title }}</ion-label>
             </ion-item>

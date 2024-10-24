@@ -1,7 +1,5 @@
 <script setup>
-    import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-    import NewsSingle from '../components/NewsSingle.vue';
-    import NewsForm from '../components/NewsForm.vue';
+    import { IonCard, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/vue';
 </script>
 
 <template>
@@ -32,6 +30,12 @@
         result: '',
         isScanning: false
       };
+    },
+    components: {
+      IonPage,
+      IonCard,
+      IonContent,
+      IonHeader
     },
     methods: {
       ...mapActions('auth', ['checkin']),
