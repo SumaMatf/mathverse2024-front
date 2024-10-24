@@ -34,7 +34,7 @@
             <br>
             <h2>KONTAKTIRAJTE NAS</h2>
             <div style="margin: 10px 0; vertical-align: center;" class="contact">
-                <ion-icon :icon="callOutline" size="large" style="padding-right: 10px;"></ion-icon> <a href="tel:+381611234567" style="font-size: medium;">+381611234567</a>
+                <ion-icon :icon="callOutline" size="large" style="padding-right: 10px;"></ion-icon> <a href="tel:+381645620770" style="font-size: medium;">+381645620770</a>
             </div>
             <div style="margin: 10px 0; vertical-align: center;" class="contact">
                 <ion-icon :icon="mailOutline" size="large" style="padding-right: 10px;"></ion-icon> <a href="mailto:suma.hrteam@gmail.com" style="font-size: medium;">suma.hrteam@gmail.com</a>
