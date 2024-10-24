@@ -20,9 +20,9 @@
                     10:00 - 10:45
                 </td>
                 <td style="padding: 15px 10px"> 
-                    Kompajlerske optimizacije, tehnike i alati za komprimovanje koda
+                    Matematička bojanka
                     <br>
-                    <i>Marko Spasić - <b>Matematički fakultet</b></i>
+                    <i>Marija Cvetković - <b>PMF, Univerztet u Nišu</b></i>
                 </td>
             </tr>
             <tr style="background-color: #6b2d2f;">
@@ -30,9 +30,9 @@
                     11:00 - 11:45
                 </td>
                 <td style="padding: 15px 10px">
-                    Veštačka inteligencija i matematika
+                    Uspeh na društvenim mrežama
                     <br>
-                    <i>Petar Veličković</i>
+                    <i>Maja Ognjenović</i>
                 </td>
             </tr>
             <tr style="background-color: #b88a52;">
@@ -40,65 +40,55 @@
                     12:00 - 14:00
                 </td>
                 <td style="padding: 30px 10px">
-                    Simulacije intervjua: UniCredit, Mozzart
+                    Simulacija intervjua: Yettel
                 </td>
             </tr>
             <tr style="background-color: #796b5c;">
-                <td style="padding: 7px 10px">
-                    14:00 - 14:30
+                <td style="padding: 30px 10px">
+                    14:00 - 16:00
                 </td>
-                <td style="padding: 7px 10px">
+                <td style="padding: 30px 10px">
                     Ručak
                 </td>
             </tr>
-            <tr style="background-color: #b88a52;">
-                <td style="padding: 22px 10px">
-                    14:30 - 16:00
+            <tr style="background-color: #6b2d2f;">
+                <td style="padding: 15px 10px">
+                    16:00 - 16:45
                 </td>
-                <td style="padding: 22px 10px">
-                    Simulacija intervjua: Mozzart / Ručak
+                <td style="padding: 15px 10px">
+                    Veštačka inteligencija: Rizici i prilike
+                    <br>
+                    <i><b>Efektivni Altruizam</b></i>
                 </td>
             </tr>
-            <tr style="background-color: #b88a52;">
+            <tr style="background-color: #6b2d2f;">
+                <td style="padding: 15px 10px">
+                    17:00 - 17:45
+                </td>
+                <td style="padding: 15px 10px">
+                    PANEL DISKUSIJA: <br> Cloud computing: Kako IT menja industriju
+                    <br>
+                    <i>Srđan Đorđević - <b>Yettel</b></i>
+                    <br>
+                    <i>Denis Aličić - <b>Matematički fakultet</b></i>
+                    <br>
+                    <i>Mihailo Vlajković - <b>Inženjer za kompleksne i velike setove podataka</b></i>
+                </td>
+            </tr>
+            <tr style="background-color: #6b2d2f;">
                 <td style="padding: 7px 10px">
-                    16:00 - 16:30
+                    18:00 - 18:30
                 </td>
                 <td style="padding: 7px 10px">
-                    Simulacija intervjua: Mozzart
+                    Zatvaranje
                 </td>
             </tr>
             <tr style="background-color: #686868;">
                 <td style="padding: 7px 10px">
-                    16:30 - 16:45
+                    18:30 - 19:00
                 </td>
                 <td style="padding: 7px 10px">
                     PAUZA
-                </td>
-            </tr>
-            <tr style="background-color: #6b2d2f;">
-                <td style="padding: 20px 10px">
-                    16:45 - 17:45
-                </td>
-                <td style="padding: 20px 10px">
-                    Razvoj video igre i AI u Unity Engine-u
-                    <br>
-                    <i>Denis Aličić - <b>Matematički fakultet</b></i>
-                </td>
-            </tr>
-            <tr style="background-color: #6b2d2f;">
-                <td style="padding: 20px 10px">
-                    18:00 - 18:45
-                </td>
-                <td style="padding: 20px 10px">
-                    PANEL DISKUSIJA: <br> Od teorije do primene: Kako se matematički modeli koriste za rešavanje stvarnih problema
-                    <br>
-                    <i>Srđan Bosnjak - <b>UniCredit banka</b></i>
-                    <br>
-                    <i>Jelena Jocković - <b>Matematički fakultet</b></i>
-                    <br>
-                    <i>Mihailo Srbakoski - <b>Matematički fakultet</b></i>
-                    <br>
-                    <i>Natalija Lazić - <b>Junior data scientist</b></i>
                 </td>
             </tr>
             <tr style="background-color: #796b5c;">
@@ -114,7 +104,7 @@
                     21:00 -
                 </td>
                 <td style="padding: 15px 10px">
-                    Pub kviz
+                    Tematska žurka
                 </td>
             </tr>
         </tbody>

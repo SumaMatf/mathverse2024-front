@@ -15,7 +15,7 @@
                     Dolazak
                 </td>
             </tr>
-            <tr style="background-color: #b88a52;">
+            <tr style="background-color: #796b5c;">
                 <td style="padding: 15px 10px">
                     13:00 - 14:00
                 </td>
@@ -23,7 +23,7 @@
                     Check-in
                 </td>
             </tr>
-            <tr style="background-color: #6b2d2f;">
+            <tr style="background-color: #796b5c;">
                 <td style="padding: 30px 10px">
                     14:00 - 16:00
                 </td>
@@ -31,12 +31,46 @@
                     Ručak
                 </td>
             </tr>
-            <tr style="background-color: #b88a52;">
+            <tr style="background-color: #686868;">
                 <td style="padding: 15px 10px">
                     16:00 - 17:00
                 </td>
                 <td style="padding: 15px 10px">
                     Odmor
+                </td>
+            </tr>
+            <tr style="background-color: #6b2d2f;">
+                <td style="padding: 15px 10px">
+                    17:00 - 18:00
+                </td>
+                <td style="padding: 15px 10px">
+                    Otvaranje
+                </td>
+            </tr>
+            <tr style="background-color: #6b2d2f;">
+                <td style="padding: 15px 10px">
+                    18:00 - 18:45
+                </td>
+                <td style="padding: 15px 10px">
+                    Od podataka do poslovnih odluka - Beskonačni problemi
+                    <br>
+                    <i>Goran Gerović - <b>Mozzart</b></i>
+                </td>
+            </tr>
+            <tr style="background-color: #796b5c;">
+                <td style="padding: 30px 10px">
+                    19:00 - 21:00
+                </td>
+                <td style="padding: 30px 10px">
+                    Večera
+                </td>
+            </tr>
+            <tr style="background-color: #796b5c;">
+                <td style="padding: 15px 10px">
+                    21:00 -
+                </td>
+                <td style="padding: 15px 10px">
+                    Karaoke veče
                 </td>
             </tr>
         </tbody>
@@ -61,6 +95,7 @@ export default {
         overflow:hidden;
         margin: 0 auto;
         margin-top: 100px;
+        margin-bottom: 100px;
     }
 
     tr:hover {
@@ -69,11 +104,15 @@ export default {
 
     th, td {
         text-align: center;
-        width: 150px;
+    }
+    tr {
+        border-bottom: solid 2px #888888;
+    }
+    tr:last-child {
+        border-bottom: none;
     }
     
-    td:nth-child(even) {
-        border-left: 2px solid #454545;
+    td:nth-child(odd) {
 
         background-color: rgba(0,0,0,0.2);
     }

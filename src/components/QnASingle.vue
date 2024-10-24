@@ -3,7 +3,7 @@
             <ion-item slot="header" style="background-color: #220e0f;">
               <ion-label>{{ qna.title }}</ion-label>
             </ion-item>
-            <div v-if="qna.answer" class="ion-padding" slot="content">{{qna.answer.content}}</div>
+            <div v-if="qna.answer" class="ion-padding" slot="content" style="--ion-background-color: #060606;">{{qna.answer.content}}</div>
             <div v-else-if="authUser.role.id == Role.Admin" class="ion-padding" slot="content">
                 <QnAFormAdmin :qna="qna"/>
             </div>

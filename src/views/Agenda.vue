@@ -12,6 +12,8 @@
     IonIcon} from '@ionic/vue';
     import agenda24 from '../components/agenda/agenda24.vue';
     import agenda25 from '../components/agenda/agenda25.vue';
+    import agenda26 from '../components/agenda/agenda26.vue';
+    import agenda27 from '../components/agenda/agenda27.vue';
 
   
   </script>
@@ -39,38 +41,24 @@
         </ion-content>-->
         <ion-tabs style="--ion-tab-bar-background:#311315; ">
     <ion-tab tab="tab24">
-      <div id="agenda-24">
+      <ion-content id="agenda-24" style=" --background: url('../../public/banner2.png') 0 0/100% 100% no-repeat;">
         <agenda24></agenda24>
-      </div>
+      </ion-content>
     </ion-tab>
     <ion-tab tab="tab25">
-      <div id="agenda-25">
+      <ion-content id="agenda-25" style=" --background: url('../../public/banner2.png') 0 0/100% 100% no-repeat;">
         <agenda25></agenda25>
-      </div>
+      </ion-content>
     </ion-tab>
-    <ion-tab tab="library">
-      <div id="library-page">
-        <ion-header>
-          <ion-toolbar>
-            <ion-title>Library</ion-title>
-          </ion-toolbar>
-        </ion-header>
-        <ion-content>
-          <div class="example-content">Library content</div>
-        </ion-content>
-      </div>
+    <ion-tab tab="tab26">
+      <ion-content id="agenda-26" style=" --background: url('../../public/banner2.png') 0 0/100% 100% no-repeat;">
+        <agenda26></agenda26>
+      </ion-content>
     </ion-tab>
-    <ion-tab tab="search">
-      <div id="search-page">
-        <ion-header>
-          <ion-toolbar>
-            <ion-title>Search</ion-title>
-          </ion-toolbar>
-        </ion-header>
-        <ion-content>
-          <div class="example-content">Search content</div>
-        </ion-content>
-      </div>
+    <ion-tab tab="tab27">
+      <ion-content id="agenda-27" style=" --background: url('../../public/banner2.png') 0 0/100% 100% no-repeat;">
+        <agenda27></agenda27>
+      </ion-content>
     </ion-tab>
 
     <ion-tab-bar slot="top">
